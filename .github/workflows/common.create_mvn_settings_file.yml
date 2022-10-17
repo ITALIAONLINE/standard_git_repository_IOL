@@ -17,11 +17,17 @@ on:
            </settings>
       TEST: 
         description: "Test password"
-        value: ${{ secrets.TEST }}
+        value: ${{ jobs.create_mvn_settings_file.outputs.TEST }}
 
 jobs:
   create_mvn_settings_file:
     runs-on: ubuntu-latest
 
+    outputs:
+      TEST: ${{ secrets.TEST }}
+
     steps:
     - uses: actions/checkout@v3
+
+
+    
