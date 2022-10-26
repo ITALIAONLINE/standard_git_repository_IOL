@@ -6,66 +6,7 @@ on:
       settingsCMD:
         description: "The first output string"
         value: <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-           <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
-             <servers>
-               <server>
-                 <id>anypoint-exchange-v3</id>
-                 <username>${env.USERNAME}</username>
-                 <password>${env.PASSWORD}</password>
-                 </server>
-              <server>
-			          <id>MuleRepository-nexus</id>
-			          <username>${env.USERNAME_IOL_NEXUS}</username>
-			          <password>${env.PASSWORD_IOL_NEXUS}</password>
-		          </server>
-             </servers>
-             <pluginGroups>
-              <pluginGroup>org.mule.tools</pluginGroup>
-            </pluginGroups>
-            <profiles>
-              <profile>
-                <id>mule-extra-repos</id>
-                <activation>
-                  <activeByDefault>true</activeByDefault>
-                </activation>
-                <repositories>
-                  <repository>
-                    <id>mule-public</id>
-                    <url> https://repository.mulesoft.org/nexus/content/repositories/public </url>
-                  </repository>
-                </repositories>
-                <pluginRepositories>
-                  <pluginRepository>
-                    <id>mule-public</id>
-                    <url> https://repository.mulesoft.org/nexus/content/repositories/public </url>
-                  </pluginRepository>
-                </pluginRepositories>
-              </profile>
-              <profile>
-                <id>Mule</id>
-                <activation>
-                  <activeByDefault>true</activeByDefault>
-                </activation>
-                <repositories>
-                  <repository>
-                    <id>MuleRepository-nexus</id>
-                    <name>MuleRepository</name>
-                    <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
-                    <layout>default</layout>
-                    <releases>
-                      <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                      <enabled>true</enabled>
-                    </snapshots>
-                  </repository>
-                </repositories>
-              </profile>
-            </profiles> 
-            <activeProfiles>
-              <activeProfile>Mule</activeProfile>
-            </activeProfiles>
-           </settings>
+           <settingsxmlns="http://maven.apache.org/SETTINGS/1.2.0"xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0https://maven.apache.org/xsd/settings-1.2.0.xsd"><servers><server><id>anypoint-exchange-v3</id><username>${env.USERNAME}</username><password>${env.PASSWORD}</password></server><server><id>MuleRepository-nexus</id><username>${env.USERNAME_IOL_NEXUS}</username><password>${env.PASSWORD_IOL_NEXUS}</password></server></servers><pluginGroups><pluginGroup>org.mule.tools</pluginGroup></pluginGroups><profiles><profile><id>mule-extra-repos</id><activation><activeByDefault>true</activeByDefault></activation><repositories><repository><id>mule-public</id><url>https://repository.mulesoft.org/nexus/content/repositories/public</url></repository></repositories><pluginRepositories><pluginRepository><id>mule-public</id><url>https://repository.mulesoft.org/nexus/content/repositories/public</url></pluginRepository></pluginRepositories></profile><profile><id>Mule</id><activation><activeByDefault>true</activeByDefault></activation><repositories><repository><id>MuleRepository-nexus</id><name>MuleRepository</name><url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url><layout>default</layout><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository></repositories></profile></profiles><activeProfiles><activeProfile>Mule</activeProfile></activeProfiles></settings>
 
 jobs:
   create_mvn_settings_file:
